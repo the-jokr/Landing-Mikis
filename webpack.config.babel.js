@@ -6,12 +6,38 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin"
 
 const isProduction = process.env.NODE_ENV === "production"
 
+const pages = {
+    home: { isIndex: true },
+    about: {}
+}
+
+const getEntryPoints = () => {
+    const keys = Object.keys(pages)
+    const obj = {}
+
+    keys.forEach(pageName => {
+        obj[pageName] = `./src/pages/${pageName}.js`
+    })
+    return obj
+}
+
+const getHTMLWebpackPlugins = props =>
+    Object.keys(pages).map(
+        pageName =>
+            new HtmlWebpackPlugin({
+                inject: true,
+                chunks: [pageName],
+                filename: `${
+                    pages[pageName].isIndex ? "index" : pageName
+                }.html`,
+                template: `src/html/${pageName}.pug`,
+                templateParameters: { pageName, ...props }
+            })
+    )
+
 export default {
     mode: isProduction ? "production" : "development",
-    entry: {
-        home: "./src/home.js",
-        about: "./src/about.js"
-    },
+    entry: getEntryPoints(),
     output: {
         filename: "[name].[hash].js",
         path: __dirname + "/dist"
@@ -105,20 +131,7 @@ export default {
     },
     plugins: [
         new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin({
-            inject: true,
-            chunks: ["home"],
-            filename: "index.html",
-            template: "src/pages/index.pug",
-            templateParameters: { title: "Home" }
-        }),
-        new HtmlWebpackPlugin({
-            inject: true,
-            chunks: ["about"],
-            filename: "about.html",
-            template: "src/pages/about.pug",
-            templateParameters: { title: "About" }
-        }),
+        ...getHTMLWebpackPlugins(),
         new MiniCssExtractPlugin({
             filename: "[name].[hash].css"
         })
