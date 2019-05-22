@@ -1,0 +1,21 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background: #fffded;
+    font-size: 1.8rem;
+    color: #282776;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}

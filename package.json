@@ -36,6 +36,8 @@
         "webpack-dev-server": "^3.2.1"
     },
     "dependencies": {
+        "hamburgers": "^1.1.3",
+        "pesticide": "^1.3.1",
         "reset-css": "^4.0.1"
     }
 }

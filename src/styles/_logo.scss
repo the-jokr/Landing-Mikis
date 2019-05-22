@@ -1,0 +1,54 @@
+header .logos {
+    position: relative;
+    width: 25%;
+}
+
+header .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    fill: $coral;
+    .nose {
+        fill: $patrick;
+    }
+
+    display: none;
+}
+
+header .logo-icon {
+    display: block;
+}
+
+@include mq(small) {
+    header {
+        .logos {
+            width: 50%;
+            max-width: 36rem;
+        }
+
+        .logo-icon {
+            display: none;
+        }
+
+        .logo-left-aligned {
+            display: block;
+        }
+    }
+}
+
+@include mq(x-large) {
+    header {
+        .logos {
+            @include center($vertical: false);
+        }
+
+        .logo-left-aligned {
+            display: none;
+        }
+
+        .logo-centered {
+            display: block;
+        }
+    }
+}

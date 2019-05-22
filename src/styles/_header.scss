@@ -1,0 +1,59 @@
+header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 3.2rem 1.6rem;
+}
+
+header .hamburger {
+    display: none;
+}
+
+header .ctas {
+    display: none;
+}
+
+// header .hamburger {
+//     margin-bottom: 0.8rem;
+// }
+
+// header .ctas .cta {
+//     font-family: "Quantico", "Gill Sans", "Gill Sans MT", Calibri,
+//         "Trebuchet MS", sans-serif;
+//     font-size: 1.4rem;
+//     font-weight: bold;
+//     text-transform: uppercase;
+//     text-align: center;
+//     margin: auto;
+//     letter-spacing: 0.5px;
+//     padding: 1.6rem;
+//     width: 15rem;
+// }
+
+// header .ctas .cta-primary {
+//     position: relative;
+//     background: #ff7062;
+//     color: #ffffff;
+//     transform: translate(-0.8rem, -0.8rem);
+//     transition: all 150ms ease-in-out;
+
+//     &:after {
+//         content: "";
+//         position: absolute;
+//         top: 0.8rem;
+//         left: 0.8rem;
+//         width: 100%;
+//         height: 100%;
+//         border: 2px solid #ff7062;
+//         transition: all 100ms ease-in-out;
+//     }
+
+//     &:hover {
+//         transform: translate(0px, 0px);
+
+//         &:after {
+//             top: 0;
+//             left: 0;
+//         }
+//     }
+// }
