@@ -45,5 +45,5 @@ $hamburger-types: (
 @import "hamburgers/_sass/hamburgers/hamburgers.scss";
 .hamburger {
     outline: none;
-    margin-right: -1.6rem;
+    z-index: 10000;
 }
