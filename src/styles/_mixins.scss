@@ -23,3 +23,7 @@
         transform: translate(0, -50%);
     }
 }
+
+@function z-index($key) {
+    @return map-get($z-index, $key);
+}

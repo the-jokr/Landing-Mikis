@@ -1,8 +1,10 @@
 header {
-    position: relative;
+    position: fixed;
     display: flex;
     justify-content: space-between;
     padding: 3.2rem 1.6rem;
+    width: 100%;
+    z-index: z-index(header);
 }
 
 header .nav-links {
@@ -28,7 +30,6 @@ header .nav-link {
     text-align: center;
     letter-spacing: 0.5px;
     padding: 1.6rem;
-    // width: 85%;
     max-width: 30rem;
     min-width: 20rem;
     margin-bottom: 1.6rem;
@@ -101,4 +102,5 @@ header .cta-primary {
 
 header.is-open .nav-links {
     display: flex;
+    z-index: z-index(nav-links);
 }

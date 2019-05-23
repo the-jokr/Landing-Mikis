@@ -1,4 +1,9 @@
 extends _layout
 
 block content
-    h1 Welcome to the #{title} page!
+    section.hero
+        h1.typed-joke You could write your dad jokes on paper...
+        .ctas
+            a.cta.cta-primary(href="http://dadjokes.com/sign-up", target="_blank", rel="noopener noreferrer") Word. Sign Me Up!
+            a.cta(href="http://dadjokes.com/login", target="_blank", rel="noopener noreferrer") Already have an account?
+                strong Log In.
