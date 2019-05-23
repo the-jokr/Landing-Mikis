@@ -1,0 +1,104 @@
+header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 3.2rem 1.6rem;
+}
+
+header .nav-links {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: $spongebob;
+}
+
+header .nav-link {
+    font-family: "Quantico", "Gill Sans", "Gill Sans MT", Calibri,
+        "Trebuchet MS", sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.5px;
+    padding: 1.6rem;
+    // width: 85%;
+    max-width: 30rem;
+    min-width: 20rem;
+    margin-bottom: 1.6rem;
+
+    @include fadeInDown($duration: 200ms, $function: ease-in-out);
+}
+
+header .cta-primary {
+    position: relative;
+    background: #ff7062;
+    color: #ffffff;
+    transform: translate(-0.8rem, -0.8rem);
+    transition: all 150ms ease-in-out;
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0.8rem;
+        left: 0.8rem;
+        width: 100%;
+        height: 100%;
+        border: 2px solid #ff7062;
+        transition: all 100ms ease-in-out;
+    }
+
+    &:hover {
+        transform: translate(0px, 0px);
+
+        &:after {
+            top: 0;
+            left: 0;
+        }
+    }
+}
+
+@include mq(large) {
+    header {
+        padding: 6.4rem;
+
+        .hamburger {
+            display: none;
+        }
+
+        .nav-links {
+            position: relative;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            width: 31.6rem;
+            height: auto;
+            background: transparent;
+        }
+
+        .nav-link {
+            margin: 0;
+            width: 15rem;
+
+            &:not(.cta-primary) {
+                margin-right: -4.8rem;
+            }
+        }
+    }
+}
+
+@include mq(x-large) {
+    header {
+        justify-content: flex-end;
+    }
+}
+
+header.is-open .nav-links {
+    display: flex;
+}

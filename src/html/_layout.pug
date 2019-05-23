@@ -7,5 +7,17 @@ html(lang="en")
         title #{title} | DadJokes
     body
         header
-            h1 #{title} | DadJokes
+            .logos
+                a(href="/", alt="Navigate to Home Page")
+                    include _logo-centered
+                a(href="/", alt="Navigate to Home Page")
+                    include _logo-left-aligned
+                a(href="/", alt="Navigate to Home Page")
+                    include _logo-icon
+            button.hamburger.hamburger--squeeze(type="button", aria-label="Menu", aria-controls="navigation")
+                span.hamburger-box
+                    span.hamburger-inner
+            nav.nav-links
+                a.nav-link.cta-primary(href="http://dadjokes.com/sign-up", target="_blank", rel="noopener noreferrer") Get Started
+                a.nav-link(href="http://dadjokes.com/login", target="_blank", rel="noopener noreferrer") Log In
         block content

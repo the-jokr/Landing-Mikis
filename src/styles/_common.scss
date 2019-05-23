@@ -1,5 +1,19 @@
 @import "reset-css";
+@import "variables";
+@import "mixins";
 
-body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+@import "base";
+
+@import "hamburger";
+@import "animate-scss/animate.scss";
+
+@import "header";
+@import "logo";
+
+// For debugging only
+$pesticide-debug-outline: false;
+$pesticide-debug-depth: false;
+@import "pesticide/sass/pesticide.scss";
+// svg {
+//     border: 1px solid blue;
+// }
