@@ -1,0 +1,83 @@
+.hero {
+    position: relative;
+    background-image: url(../assets/images/dad_jokes_2.svg);
+    background-size: cover;
+    height: 100vh;
+    z-index: z-index(hero-section-content);
+}
+
+.hero .typed-joke {
+    font-family: "Quantico", "Franklin Gothic Medium", "Arial Narrow", Arial,
+        sans-serif;
+    font-weight: bold;
+    font-size: 3.2rem;
+    line-height: 1.2;
+    text-align: center;
+    display: block;
+    width: calc(100% - 1.6rem);
+
+    @include center();
+}
+
+.hero .ctas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include center();
+
+    top: 75%;
+}
+
+.hero .cta {
+    position: relative;
+    font-family: "Fira Sans", "Gill Sans", "Gill Sans MT", Calibri,
+        "Trebuchet MS", sans-serif;
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 1.6rem;
+
+    strong {
+        padding-left: 0.4rem;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+}
+
+.hero .cta-primary {
+    position: relative;
+    background: #ff7062;
+    color: #ffffff;
+    font-family: "Quantico", "Gill Sans", "Gill Sans MT", Calibri,
+        "Trebuchet MS", sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.5px;
+    max-width: 30rem;
+    min-width: 20rem;
+    transform: translate(-0.8rem, -0.8rem);
+    transition: all 150ms ease-in-out;
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0.8rem;
+        left: 0.8rem;
+        width: 100%;
+        height: 100%;
+        border: 2px solid #ff7062;
+        transition: all 100ms ease-in-out;
+    }
+
+    &:hover {
+        transform: translate(0px, 0px);
+
+        &:after {
+            top: 0;
+            left: 0;
+        }
+    }
+}

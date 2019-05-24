@@ -1,0 +1,61 @@
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: $spongebob;
+    height: 50vw;
+    padding: 1.6rem;
+}
+
+footer nav {
+    font-family: "Quantico";
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    color: $coral;
+}
+
+footer .logos {
+    display: flex;
+    justify-content: center;
+
+    a {
+        width: 50%;
+    }
+
+    .logo {
+        fill: $coral;
+        .nose {
+            fill: $patrick;
+        }
+    }
+}
+
+footer .copyright {
+    align-self: center;
+    font-family: "Fira Sans";
+    font-size: 1.2rem;
+    color: $coral;
+}
+
+@include mq(small) {
+    footer {
+        height: 30vw;
+    }
+}
+
+@include mq(medium) {
+    footer {
+        height: 25vw;
+    }
+}
+
+@include mq(large) {
+    footer {
+        height: 20vw;
+    }
+}

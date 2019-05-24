@@ -1,0 +1,127 @@
+.features {
+    h2 {
+        font-family: "Quantico";
+        font-size: 4.3rem;
+        font-weight: bold;
+        text-align: center;
+        padding-bottom: 1.6rem;
+    }
+
+    p {
+        font-family: "Fira Sans";
+        font-size: 1.4rem;
+        text-align: center;
+    }
+}
+
+.features .features-list {
+    display: flex;
+    flex-direction: column;
+    padding: 1.6rem;
+
+    .feature {
+        display: flex;
+        flex-direction: column-reverse;
+        margin-bottom: 3.2rem;
+
+        .description {
+            display: flex;
+            flex-direction: column;
+
+            h3 {
+                font-family: "Quantico";
+                font-size: 2.4rem;
+                font-weight: bold;
+                padding-bottom: 0.8rem;
+            }
+
+            p {
+                text-align: left;
+                font-size: 1.4rem;
+                line-height: 1.5;
+            }
+        }
+
+        .illustration {
+            background-size: 100% 100%;
+            height: 70vw;
+            margin-bottom: 1.6rem;
+        }
+    }
+}
+
+.features .features-list .feature:nth-child(1) .illustration {
+    background-image: url(../assets/images/secure_joke.svg);
+}
+
+.features .features-list .feature:nth-child(2) .illustration {
+    background-image: url(../assets/images/joke_tracker.svg);
+}
+
+.features .features-list .feature:nth-child(3) .illustration {
+    background-image: url(../assets/images/joke_search.svg);
+}
+
+.features .features-list .feature:nth-child(4) .illustration {
+    background-image: url(../assets/images/joke_filter.svg);
+}
+
+.features .features-list .feature:nth-child(5) .illustration {
+    background-image: url(../assets/images/share_joke.svg);
+}
+
+@include mq(small) {
+    .features .features-list {
+        margin-top: 3.2rem;
+        .feature {
+            max-width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+
+            .description {
+            }
+            .illustration {
+                height: 30vw;
+            }
+        }
+    }
+}
+
+@include mq(medium) {
+    .features .features-list {
+        .feature {
+            flex-direction: row;
+            justify-content: space-between;
+            max-width: 100%;
+
+            &:nth-of-type(even) {
+                flex-direction: row-reverse;
+            }
+
+            .description {
+                justify-content: flex-end;
+                width: 48%;
+            }
+            .illustration {
+                padding-top: 1.6rem;
+                width: 48%;
+            }
+        }
+    }
+}
+
+@include mq(large) {
+    .features .features-list {
+        .feature {
+            width: 85%;
+        }
+    }
+}
+
+@include mq(x-large) {
+    .features .features-list {
+        .feature {
+            width: 65%;
+        }
+    }
+}

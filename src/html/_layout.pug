@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title #{title} | DadJokes
+    body
+        header
+            .logos
+                a(href="/", alt="Navigate to Home Page")
+                    include _logo-centered
+                a(href="/", alt="Navigate to Home Page")
+                    include _logo-left-aligned
+                a(href="/", alt="Navigate to Home Page")
+                    include _logo-icon
+            button.hamburger.hamburger--squeeze(type="button", aria-label="Menu", aria-controls="navigation")
+                span.hamburger-box
+                    span.hamburger-inner
+            nav.nav-links
+                a.nav-link.cta-primary(href="http://dadjokes.com/sign-up", target="_blank", rel="noopener noreferrer") Get Started
+                a.nav-link(href="http://dadjokes.com/login", target="_blank", rel="noopener noreferrer") Log In
+        block content
+
+        footer
+            nav
+                a(href="./about.html", alt="Navigate to the About Page") Meet the Team
+            .logos
+                a(href="/", alt="Navigate to Home Page")
+                    include _logo-centered
+            p.copyright &copy; 2019 All Rights Reserved.

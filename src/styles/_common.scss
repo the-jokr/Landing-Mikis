@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans:400,400i|Quantico:700&display=swap");
+@import "reset-css";
+@import "variables";
+@import "mixins";
+
+@import "base";
+
+@import "hamburger";
+@import "animate-scss/animate.scss";
+
+@import "header";
+@import "logo";
+@import "home-hero";
+@import "features";
+@import "testimonials";
+@import "footer";
+
+// For debugging only
+$pesticide-debug-outline: false;
+$pesticide-debug-depth: false;
+// @import "pesticide/sass/pesticide.scss";
+// svg {
+//     border: 1px solid blue;
+// }

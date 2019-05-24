@@ -1,0 +1,23 @@
+$coral: #6462b8;
+$coral-dark: #282776;
+
+$patrick: #ff7062;
+$patrick-light: #ffa771;
+
+$spongebob: #ffef75;
+$spongebob-light: #fffded;
+
+$breakpoints: (
+    small: 400px,
+    medium: 600px,
+    large: 800px,
+    x-large: 960px
+);
+
+$z-index: (
+    logos: 10000,
+    hamburger: 10000,
+    nav-links: 9000,
+    header: 8000,
+    hero-section-content: 7000
+);
