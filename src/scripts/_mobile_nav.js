@@ -5,19 +5,38 @@ const $header = $qs("header")
 
 let isOpen = false
 
-const toggleMenu = () => {
+const openMenuSequence = () => {
     // Animate hamburger icon
-    toggleClass($menuTrigger, "is-active")
-    $menuTrigger.setAttribute("aria-expanded", isOpen)
+    addClass($menuTrigger, "is-active")
+    $menuTrigger.setAttribute("aria-expanded", true)
 
-    // Toggle mobile navigation
-    toggleClass($header, "is-open")
+    // Open menu
+    addClass($header, "is-open")
 
+    // Prevent scrolling
+    $qs("body").style.overflow = "hidden"
+}
+
+const closeMenuSequence = () => {
+    // Animate hamburger icon
+    removeClass($menuTrigger, "is-active")
+    $menuTrigger.setAttribute("aria-expanded", false)
+
+    // Close menu
+    removeClass($header, "is-open")
+
+    // Enable scrolling
+    $qs("body").style.overflow = "auto"
+}
+
+const toggleMenu = () => {
     // Update state
     isOpen = !isOpen
 
     // Don't animate links if menu is not open
-    if (!isOpen) return
+    if (!isOpen) return closeMenuSequence()
+
+    openMenuSequence()
 
     // Stagger nav link animation
     $qsa(".nav-link").forEach(($link, index, all) => {
