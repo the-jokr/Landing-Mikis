@@ -1,6 +1,6 @@
 {
     "name": "@dad-jokes/landing-page",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "description": "The app for Dad-Joke enthusiasts.",
     "repository": "https://github.com/the-jokr/Landing-Mikis",
     "scripts": {
