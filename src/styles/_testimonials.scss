@@ -1,0 +1,108 @@
+.testimonials {
+    background: white url(../assets/images/distorted_smiley.svg);
+    padding: 3.2rem 1.6rem;
+}
+
+.testimonials h2 {
+    font-family: "Quantico";
+    font-size: 3.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.6rem;
+}
+
+.testimonials .carousel {
+    background: white;
+    box-shadow: 0px 12px 34px -34px rgba(0, 0, 0, 0.75);
+    height: 50vw;
+}
+
+.testimonials .viewport {
+    height: 90%;
+    cursor: e-resize;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonials .slide {
+    height: 100%;
+    width: 500%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+    right: 0;
+}
+
+.testimonials .content {
+    border: 1px solid white;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.testimonials blockquote {
+    font-family: "Fira Sans";
+    font-size: 1.6rem;
+    text-align: center;
+    line-height: 1.5;
+    font-style: italic;
+    width: 85%;
+    @include center();
+}
+
+.testimonials cite {
+    position: relative;
+    display: block;
+    font-size: 1.2rem;
+    text-align: right;
+    padding-top: 1.6rem;
+
+    &:before {
+        content: "—";
+        padding-right: 0.8rem;
+    }
+}
+
+.testimonials .indicator-group {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    height: 0.8rem;
+
+    .indicator {
+        height: 50%;
+        width: 15%;
+        margin-right: 0.4rem;
+        cursor: pointer;
+        background: rgba($coral, 0.25);
+
+        &:hover {
+            height: 100%;
+            background: $coral;
+        }
+    }
+
+    .indicator.is-active {
+        height: 100%;
+        background: $coral;
+    }
+}
+
+@include mq(medium) {
+    .testimonials {
+        .carousel {
+            width: 80%;
+            margin: auto;
+            height: 30vw;
+        }
+    }
+}
+
+@include mq(large) {
+    .testimonials {
+        .carousel {
+            max-width: 50%;
+        }
+    }
+}
