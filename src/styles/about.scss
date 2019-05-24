@@ -1,1 +1,14 @@
 @import "common";
+
+.hero h1 {
+    font-family: "Quantico", "Franklin Gothic Medium", "Arial Narrow", Arial,
+        sans-serif;
+    font-weight: bold;
+    font-size: 3.2rem;
+    line-height: 1.2;
+    text-align: center;
+    display: block;
+    width: calc(100% - 1.6rem);
+
+    @include center();
+}
