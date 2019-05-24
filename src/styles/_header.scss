@@ -5,7 +5,8 @@ header {
     padding: 3.2rem 1.6rem;
     width: 100%;
     z-index: z-index(header);
-    // background: rgba($spongebob, 0.98);
+    background: rgba($spongebob, 0.98);
+    transition: all 250ms ease-in-out;
 }
 
 header .nav-links {
