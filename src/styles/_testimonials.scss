@@ -77,6 +77,7 @@
         margin-right: 0.4rem;
         cursor: pointer;
         background: rgba($coral, 0.25);
+        transition: all 250ms ease-in;
 
         &:hover {
             height: 100%;

@@ -1,9 +1,10 @@
-import { $qs } from "./_utils"
+import { $qs, addClass, removeClass } from "./_utils"
 
 class Carousel {
     constructor() {
         this.$ = $qs(".carousel")
         this.$viewport = this.$.$qs(".viewport")
+        this.$indicators = this.$.$qsa(".indicator")
         this.$slide = this.$viewport.$qs(".slide")
 
         this.currentPosition = 0
@@ -13,6 +14,13 @@ class Carousel {
             "click",
             this.handleNavigationEvent.bind(this)
         )
+
+        this.$indicators.forEach(($indicator, index) => {
+            $indicator.addEventListener("click", () => {
+                this.updateCurrentPosition(index)
+                this.move()
+            })
+        })
     }
 
     updateCurrentPosition(newPosition) {
@@ -42,20 +50,22 @@ class Carousel {
         const x = clientX - left
 
         if (x < width / 2) {
-            return this.next()
+            this.updateCurrentPosition(this.currentPosition - 1)
+            return this.move()
         }
 
-        this.previous()
-    }
-
-    next() {
         this.updateCurrentPosition(this.currentPosition + 1)
-        this.$slide.style.left = this.getFormattedPosition()
+        this.move()
     }
 
-    previous() {
-        this.updateCurrentPosition(this.currentPosition - 1)
+    updateIndicators() {
+        this.$indicators.forEach($i => removeClass($i, "is-active"))
+        addClass(this.$indicators[this.currentPosition], "is-active")
+    }
+
+    move() {
         this.$slide.style.left = this.getFormattedPosition()
+        this.updateIndicators()
     }
 }
 
